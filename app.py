@@ -17,11 +17,13 @@ def home():
 @app.route('/schedule')
 def schedule():
     # todo: Get today's date
-
+    d = datetime.datetime.now()
+    date_string = f'{d.month}/{d.date}/{d.year}'
     # todo: Create dictionary of events
-
+    events = {'10:00':'Zoo opens','15:00':'Zoo closes'}
     # todo: Link to the schedule page.  Pass the date as a parameter
-    return render_template()
+    return render_template(template_name_or_list: 'schedule.html', date= date_string
+                            )
 
 @app.route('/animals')
 def animals():
